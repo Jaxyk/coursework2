@@ -34,6 +34,9 @@
             </div>
             <span class="item__username">{{ post.poster_name }}</span>
           </a>
+           <button type="button"> class="item__bookmark-btn">
+            <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+          </button>
         </div>
         <a href="/posts/{{ post.pk }}" class="item__post-link">
           <img src="{{ post.pic }}" alt="" width="348" class="item__post-img">
@@ -50,7 +53,7 @@
             </div>
           </div>
           <div class="item__comments">
-            { for comment in comments }
+            {% for comment in comments %}
             <p class="item__comment">
               <b>{{ comment.commenter_name }}:</b> {{ comment.comment }}
             </p>
